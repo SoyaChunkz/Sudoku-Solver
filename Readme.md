@@ -32,7 +32,7 @@ Follow these steps to get the project up and running:
 1. **Clone the Repository**
 
    ```sh
-   git clone https://github.com/yourusername/SudokuSolver.git
+   git clone https://github.com/SoyaChunkz/SudokuSolver.git
     ```
 
 2. **Navigate to the Project Directory**
