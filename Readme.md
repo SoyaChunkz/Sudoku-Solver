@@ -8,6 +8,16 @@ A simple Sudoku Solver application written in Java using Swing for the user inte
 - **Solve**: Automatically solve the current Sudoku puzzle.
 - **Check Solution**: Verify if the current solution is correct.
 
+### Usage
+
+1. **Generate a Random Board: Click on the "Generate Random Board" button to create a new Sudoku puzzle.**
+2. **Solve the Puzzle: Click on the "Solve" button to find a solution for the current puzzle.**
+3. **Check Your Solution: Click on the "Check Solution" button to verify if the numbers you entered are correct.**
+
+### Code Overview
+
+**SudokuUI.java: Contains the main application code, including Sudoku generation, solving algorithms, and GUI.**
+
 ## Screenshot
 
 **Click on the Generate Board button to get a random board**
@@ -49,16 +59,6 @@ Follow these steps to get the project up and running:
    ```sh
     java SudokuUI
     ```
-
-### Usage
-
-1. **Generate a Random Board: Click on the "Generate Random Board" button to create a new Sudoku puzzle.**
-2. **Solve the Puzzle: Click on the "Solve" button to find a solution for the current puzzle.**
-3. **Check Your Solution: Click on the "Check Solution" button to verify if the numbers you entered are correct.**
-
-### Code Overview
-
-**SudokuUI.java: Contains the main application code, including Sudoku generation, solving algorithms, and GUI.**
 
 ### Contact
 
