@@ -42,12 +42,12 @@ Follow these steps to get the project up and running:
 
 3. **Compile the Code**
    ```sh
-    javac SudokuSolver.java
+    javac SudokuUI.java
     ```
 
 4. **Run the Application**
    ```sh
-    java SudokuSolver
+    java SudokuUI
     ```
 
 ### Usage
