@@ -58,7 +58,7 @@ Follow these steps to get the project up and running:
 
 ### Code Overview
 
-**SudokuSolver.java: Contains the main application code, including Sudoku generation, solving algorithms, and GUI.**
+**SudokuUI.java: Contains the main application code, including Sudoku generation, solving algorithms, and GUI.**
 
 ### Contact
 
