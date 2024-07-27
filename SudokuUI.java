@@ -10,7 +10,7 @@ public class SudokuUI {
     private static final int SUBGRID_SIZE = 3;
     private static final Random random = new Random();
     private static char[][] board = new char[SIZE][SIZE];
-    
+
     private static JTextField[][] textFields = new JTextField[SIZE][SIZE];
 
     private static boolean isSafe(int row, int col, char[][] board, int number) {
@@ -41,7 +41,8 @@ public class SudokuUI {
         if (board[row][col] != '.') {
             return solveSudoku(board, nextRow, nextCol);
         }
-        for (int num = 1; num <= 9; num++) {
+        int[] numbers = getShuffledNumbers();
+        for (int num : numbers) {
             if (isSafe(row, col, board, num)) {
                 board[row][col] = (char) (num + '0');
                 if (solveSudoku(board, nextRow, nextCol)) {
@@ -51,6 +52,20 @@ public class SudokuUI {
             }
         }
         return false;
+    }
+
+    private static int[] getShuffledNumbers() {
+        int[] numbers = new int[9];
+        for (int i = 0; i < 9; i++) {
+            numbers[i] = i + 1;
+        }
+        for (int i = 0; i < numbers.length; i++) {
+            int randomIndex = random.nextInt(numbers.length);
+            int temp = numbers[i];
+            numbers[i] = numbers[randomIndex];
+            numbers[randomIndex] = temp;
+        }
+        return numbers;
     }
 
     private static void generateCompleteBoard(char[][] board) {
@@ -159,11 +174,18 @@ public class SudokuUI {
             for (int j = 0; j < SIZE; j++) {
                 textFields[i][j] = new JTextField(2);
                 textFields[i][j].setHorizontalAlignment(JTextField.CENTER);
+                textFields[i][j].setFont(new Font("Arial", Font.BOLD, 20));
+                textFields[i][j].setForeground(new Color(50, 50, 50));
+                textFields[i][j].setBackground(new Color(220, 220, 220));
                 gridPanel.add(textFields[i][j]);
             }
         }
 
         JButton generateButton = new JButton("Generate Random Board");
+        generateButton.setBackground(new Color(70, 130, 180));
+        generateButton.setForeground(Color.WHITE);
+        generateButton.setFocusPainted(false);
+        generateButton.setFont(new Font("Arial", Font.BOLD, 14));
         generateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -172,6 +194,10 @@ public class SudokuUI {
         });
 
         JButton solveButton = new JButton("Solve");
+        solveButton.setBackground(new Color(60, 179, 113));
+        solveButton.setForeground(Color.WHITE);
+        solveButton.setFocusPainted(false);
+        solveButton.setFont(new Font("Arial", Font.BOLD, 14));
         solveButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -180,6 +206,10 @@ public class SudokuUI {
         });
 
         JButton checkButton = new JButton("Check Solution");
+        checkButton.setBackground(new Color(255, 165, 0));
+        checkButton.setForeground(Color.WHITE);
+        checkButton.setFocusPainted(false);
+        checkButton.setFont(new Font("Arial", Font.BOLD, 14));
         checkButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
